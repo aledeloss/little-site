@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import Logos from './components/Logos'
+import Links from './components/Links'
 import Main from './components/Main'
 
 function App () {
@@ -15,10 +14,11 @@ function App () {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;`
+
   return (
     <StyledApp>
       <Main />
-      <Logos />
+      <Links />
     </StyledApp>
   )
 }
