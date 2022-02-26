@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body {
   font-family: ${theme.fontPrimary};
+  background-color: ${theme.colorSecondary}
 }
 `
 
