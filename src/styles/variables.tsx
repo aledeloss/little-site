@@ -1,4 +1,4 @@
-import './importFont.css'
+import './importFonts.css'
 
 // colors
 export const colors = {
