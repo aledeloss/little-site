@@ -17,9 +17,9 @@ const color: string = theme.colorPrimary
 const Links: React.FC = () => {
   return (
     <StyledIcons>
-      <Link color={color} iconContent={linksData[0].content} url={linksData[0].url} title={linksData[0].title}/>
-      <Link color={color} iconContent={linksData[1].content} url={linksData[1].url} title={linksData[1].title}/>
-      <Link color={color} iconContent={linksData[2].content} url={linksData[2].url} title={linksData[2].title}/>
+      <Link color={color} {...linksData[0]}/>
+      <Link color={color} {...linksData[1]}/>
+      <Link color={color} {...linksData[2]}/>
     </StyledIcons>
   )
 }
