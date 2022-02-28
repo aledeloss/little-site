@@ -12,17 +12,17 @@ interface ILink {
 const StyledLink = styled.a`
   width: 30px;
   height: 30px;
-  
-  &:hover {
-    opacity: 0.6;
+
+  &:hover, $:focus {
     transform: scale(1.1);
+    opacity: 0.6;
   }
 `
 
 const Link: React.FC<ILink> = ({ color, iconContent, url, title }: ILink) => {
   return (
     <StyledLink href={url} target='_blank' data-testid={url}>
-      <svg xmlns="http://www.w3.org/2000/svg"
+      <svg tabIndex={0} xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512">
         <title>{title}</title>
         <path
