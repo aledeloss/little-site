@@ -2,6 +2,12 @@
 
 This is a personal little site, meant to show how I intend to do code: simple, accesible, tested and beautiful. Please note that it`s a very early work in progress. Feel free to reach me at aledeloss@gmail.com for further details.
 
+## TODO
+- Responsive
+- On focus format
+- Dark/light themes
+- Animations
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
