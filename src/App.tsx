@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
 import Links from './components/Links'
 import Main from './components/Main'
-import { theme } from './styles/variables'
+import { darkTheme, lighTheme } from './styles/variables'
+import GlobalStyles from './styles/globalStyles'
 
 const StyledApp = styled.div`
-background-color: ${theme.colorSecondary};
 min-height: 100vh;
 display: flex;
 flex-direction: column;
@@ -15,11 +15,20 @@ justify-content: center;
 color: white;`
 
 function App () {
+  const [theme, setTheme] = useState('light')
+
+  const themeToggler = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
   return (
-    <StyledApp>
-      <Main />
-      <Links />
-    </StyledApp>
+    <ThemeProvider theme={theme === 'dark' ? darkTheme : lighTheme}>
+      <GlobalStyles />
+      <StyledApp>
+        <button onClick={() => themeToggler()}>Change theme</button>
+        <Main />
+        <Links />
+      </StyledApp>
+    </ThemeProvider>
   )
 }
 

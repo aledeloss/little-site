@@ -1,17 +1,16 @@
 import { createGlobalStyle } from 'styled-components'
-import { theme } from './variables'
 
 // global styles
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: ${theme.fontPrimary};
-  background-color: ${theme.colorSecondary}
+  font-family: ${props => props.theme.fontPrimary};
+  background-color: ${props => props.theme.colorPrimary}
 }
 `
 
-export default GlobalStyle
+export default GlobalStyles

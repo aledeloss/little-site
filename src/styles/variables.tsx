@@ -29,9 +29,15 @@ export const fontSizes = {
 }
 
 // themes
-export const theme = {
+export const darkTheme = {
   colorPrimary: colors.cream,
   colorSecondary: colors.superDarkBlue,
+  fontPrimary: fonts.poppins
+}
+
+export const lighTheme = {
+  colorPrimary: colors.superDarkBlue,
+  colorSecondary: colors.cream,
   fontPrimary: fonts.poppins
 }
 

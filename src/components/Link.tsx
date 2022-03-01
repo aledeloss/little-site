@@ -3,7 +3,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface ILink {
-  color: string;
   iconContent: string;
   url: string;
   title: string;
@@ -19,17 +18,26 @@ const StyledLink = styled.a`
   }
 `
 
-const Link: React.FC<ILink> = ({ color, iconContent, url, title }: ILink) => {
+const StyledPath = styled.path`
+  fill: ${props => props.theme.colorSecondary};
+`
+const StyledSvg = styled.svg`
+  fill: 'red';
+${StyledLink}:focus & {
+  transform: scale(1.5);
+}
+`
+
+const Link: React.FC<ILink> = ({ iconContent, url, title }: ILink) => {
   return (
     <StyledLink href={url} target='_blank' data-testid={url}>
-      <svg tabIndex={0} xmlns="http://www.w3.org/2000/svg"
+      <StyledSvg tabIndex={0} xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512">
         <title>{title}</title>
-        <path
+        <StyledPath
           className="envolope-icon"
-          fill={color}
           d={iconContent}/>
-      </svg>
+      </StyledSvg>
     </StyledLink>
   )
 }
