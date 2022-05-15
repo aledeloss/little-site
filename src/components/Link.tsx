@@ -26,7 +26,7 @@ const StyledPath = styled.path`
 
 export const Link: React.FC<ILink> = ({ iconContent, url, title }: ILink) => {
   return (
-    <StyledLink tabIndex={0} href={url} target='_blank' data-testid={url} aria-labeledby={title}>
+    <StyledLink tabIndex={0} href={url} target='_blank' data-testid={url} aria-labelledby={title}>
       <svg tabIndex={-1} xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512">
         <title id={title}>{title}</title>
