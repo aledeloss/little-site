@@ -43,7 +43,8 @@ const StyledInput = styled.input` // input
 
   &:focus + ${StyledSlider} {
     transform: scale(1.1);
-    box-shadow: 0 0 1px #2196F3;
+    opacity: 0.6;
+    outline:${props => props.theme.colorSecondary};;
   }
   
   &:checked + ${StyledSlider} {    
