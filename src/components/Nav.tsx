@@ -1,17 +1,16 @@
 import React from 'react'
-
 import styled from 'styled-components'
 import Link from './Link'
 import { linksData } from './linksData'
 
-const StyledIcons = styled.section`
+const StyledIcons = styled.ul`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `
 
-const Links: React.FC = () => {
+const Nav: React.FC = () => {
   return (
     <StyledIcons>
       <Link {...linksData[0]}/>
@@ -21,4 +20,4 @@ const Links: React.FC = () => {
   )
 }
 
-export default Links
+export default Nav

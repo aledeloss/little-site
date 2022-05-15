@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import Links from './components/Links'
+import Nav from './components/Nav'
 import Main from './components/Main'
 import { breakpoints, darkTheme, lighTheme } from './styles/variables'
 import GlobalStyles from './styles/globalStyles'
@@ -35,7 +35,7 @@ function App () {
       <StyledApp>
         <Switch handleClick={themeToggler} theme={theme}/>
         <Main />
-        <Links />
+        <Nav />
       </StyledApp>
     </ThemeProvider>
   )

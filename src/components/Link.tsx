@@ -8,6 +8,10 @@ interface ILink {
   title: string;
 }
 
+const StyledLi = styled.li`
+  list-style-type: none;
+`
+
 const StyledLink = styled.a`
   width: 30px;
   height: 30px;
@@ -16,7 +20,10 @@ const StyledLink = styled.a`
   &:hover, &:focus {
     transform: scale(1.1);
     opacity: 0.6;
-    border: solid blue;
+  }
+
+  &:focus {
+    outline: ${props => props.theme.colorSecondary};;
   }
 `
 
@@ -26,15 +33,23 @@ const StyledPath = styled.path`
 
 export const Link: React.FC<ILink> = ({ iconContent, url, title }: ILink) => {
   return (
-    <StyledLink tabIndex={0} href={url} target='_blank' data-testid={url} aria-labelledby={title}>
-      <svg tabIndex={-1} xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512">
-        <title id={title}>{title}</title>
-        <StyledPath
-          className="envolope-icon"
-          d={iconContent}/>
-      </svg>
-    </StyledLink>
+    <StyledLi>
+      <StyledLink
+        tabIndex={0}
+        href={url}
+        target='_blank'
+        data-testid={url}
+        aria-labelledby={title}>
+        <svg tabIndex={-1}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512">
+          <title id={title}>{title}</title>
+          <StyledPath
+            className="envolope-icon"
+            d={iconContent}/>
+        </svg>
+      </StyledLink>
+    </StyledLi>
   )
 }
 
