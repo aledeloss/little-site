@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import Links from './components/Links'
 import Main from './components/Main'
-import { darkTheme, lighTheme } from './styles/variables'
+import { breakpoints, darkTheme, lighTheme } from './styles/variables'
 import GlobalStyles from './styles/globalStyles'
 import { Switch } from './components/Switch'
 
 const StyledApp = styled.div`
-  margin-left: 10vw;
+  margin: auto;
   min-height: 100vh;
   width: 80vw;
   align-self: center;
@@ -17,6 +17,10 @@ const StyledApp = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 2em;
+
+  @media (min-width: ${breakpoints.desktop}) {
+    max-width: 60vw;;
+  }
 `
 
 function App () {
