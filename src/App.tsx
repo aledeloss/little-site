@@ -4,27 +4,32 @@ import Links from './components/Links'
 import Main from './components/Main'
 import { darkTheme, lighTheme } from './styles/variables'
 import GlobalStyles from './styles/globalStyles'
+import { Switch } from './components/Switch'
 
 const StyledApp = styled.div`
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-text-align: center;
-align-items: center;
-justify-content: center;
-color: white;`
+  margin-left: 10vw;
+  min-height: 100vh;
+  width: 80vw;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em;
+`
 
 function App () {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('light') // should this be a boolean
 
-  const themeToggler = () => {
+  const themeToggler = ():void => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lighTheme}>
       <GlobalStyles />
       <StyledApp>
-        <button onClick={() => themeToggler()}>Change theme</button>
+        <Switch handleClick={themeToggler} theme={theme}/>
         <Main />
         <Links />
       </StyledApp>

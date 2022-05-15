@@ -1,14 +1,13 @@
 import React from 'react'
 
 import styled from 'styled-components'
-// import { darkTheme } from '../styles/variables'
 import Link from './Link'
 import { linksData } from './linksData'
 
 const StyledIcons = styled.section`
-  width: 80%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 `
 
